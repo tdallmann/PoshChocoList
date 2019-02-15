@@ -1,7 +1,10 @@
+# Builds a packages.config file based on output of choco list -l
+
 [xml]$Doc = New-Object System.Xml.XmlDocument
 $dec = $Doc.CreateXmlDeclaration("1.0","UTF-8",$null)
 $doc.AppendChild($dec) | Out-Null
 
+# Add a nice comment to the generated file
 $comment = @"
 
 Chocolatey Installation List
